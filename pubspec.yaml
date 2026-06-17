@@ -1,0 +1,68 @@
+name: share_sathi
+description: "नेपाली शेयर बजार App - ShareSathi"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Firebase
+  firebase_core: ^2.24.0
+  firebase_auth: ^4.14.0
+  cloud_firestore: ^4.14.0
+  firebase_messaging: ^14.7.0
+  firebase_analytics: ^10.7.0
+  firebase_dynamic_links: ^7.0.0
+  
+  # AdMob
+  google_mobile_ads: ^3.0.0
+  
+  # AI & API
+  google_generative_ai: ^0.3.0
+  dio: ^5.3.1
+  
+  # State Management
+  provider: ^6.0.0
+  
+  # UI & Design
+  google_fonts: ^6.1.0
+  flutter_animate: ^4.1.1
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.1
+  
+  # Utils
+  intl: ^0.19.0
+  url_launcher: ^6.1.14
+  share_plus: ^7.1.0
+  flutter_local_notifications: ^16.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/
+  
+  fonts:
+    - family: Mukta
+      fonts:
+        - asset: assets/fonts/Mukta-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Mukta-Bold.ttf
+          weight: 700
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
