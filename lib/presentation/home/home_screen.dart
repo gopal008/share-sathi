@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/app_strings.dart';
+import '../../core/constants/app_colors.dart';
 import '../ipo_result/ipo_result_screen.dart';
 import '../news/news_screen.dart';
 import '../market/market_screen.dart';
 import '../leaderboard/leaderboard_screen.dart';
+import '../tools/digital_clock_screen.dart';
+import '../tools/joke_generator_screen.dart';
 
 /// Home Screen - Main entry point
 class HomeScreen extends StatefulWidget {
@@ -41,7 +44,13 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {
-              // Notification logic यहाँ आएल
+              // Notification logic यहाँ आइल
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.apps),
+            onPressed: () {
+              _showToolsMenu();
             },
           ),
         ],
@@ -76,6 +85,54 @@ class _HomeScreenState extends State<HomeScreen> {
             _selectedIndex = index;
           });
         },
+      ),
+    );
+  }
+
+  /// Tools Menu देखाउने
+  void _showToolsMenu() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) => Container(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'उपकरण 🛠️',
+              style: Theme.of(context).textTheme.titleLarge,
+            ),
+            const SizedBox(height: 16),
+            ListTile(
+              leading: const Icon(Icons.access_time),
+              title: const Text('विश्व घडी 🌍'),
+              subtitle: const Text('विभिन्न समय क्षेत्र'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const DigitalClockScreen(),
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.sentiment_very_satisfied),
+              title: const Text('जोक जेनरेटर 😂'),
+              subtitle: const Text('हरेक दिन नयाँ जोक'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const JokeGeneratorScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

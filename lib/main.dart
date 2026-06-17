@@ -5,7 +5,7 @@ import 'presentation/home/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Firebase initialization code यहाँ आएल
+  // Firebase initialization यहाँ आइल
   runApp(const MyApp());
 }
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        // यहाँ सबै providers add गर्नु
+        // यहाँ सबै providers add गर्ने
       ],
       child: MaterialApp(
         title: 'ShareSathi - नेपाली शेयर बजार',
